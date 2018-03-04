@@ -1,8 +1,5 @@
 const assert = require('assert'),
-	BinaryTree = require('../data-structures/binary-tree'),
-	LinkedList = require('../data-structures/linked-list'),
-	DoubleLinkedList = require('../data-structures/double-linked-list'),
-	CircularLinkedList = require('../data-structures/circular-linked-list');
+	{ BinaryTree, LinkedList, DoubleLinkedList, CircularLinkedList } = require('../src/index.js');
 
 describe('Binary Tree', function() {
 	describe('#new()', function() {
