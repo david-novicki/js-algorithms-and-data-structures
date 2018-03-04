@@ -16,6 +16,18 @@ class CircularDoubleLinkedList {
 			}
 		}
 	}
+	insert(data, afterNode) {
+		if (!data) throw new Error('You need to pass a valid data.');
+		if (!afterNode) throw new Error('You need to pass a valid node.');
+		let currentNode = this.first;
+		do {
+			if (currentNode == afterNode) {
+				let newNode = new Node(data, currentNode.next, currentNode);
+				currentNode.setNext(newNode);
+				break;
+			} else currentNode = currentNode.next;
+		} while (currentNode);
+	}
 	contains(data) {
 		let found = false;
 		let currentNode = this.first;

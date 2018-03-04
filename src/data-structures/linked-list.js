@@ -16,6 +16,17 @@ class LinkedList {
 			}
 		}
 	}
+	insert(data, afterNode) {
+		if (!data) throw new Error('You need to pass a valid data.');
+		if (!afterNode) throw new Error('You need to pass a valid node.');
+		let currentNode = this.first;
+		do {
+			if (currentNode == afterNode) {
+				currentNode.setNext(new Node(data, currentNode.next, null));
+				break;
+			} else currentNode = currentNode.next;
+		} while (currentNode);
+	}
 	contains(data) {
 		let found = false;
 		let currentNode = this.first;

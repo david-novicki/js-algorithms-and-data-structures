@@ -76,6 +76,14 @@ describe('Linked List', function() {
 		LL.add(1);
 		assert.equal(LL.contains(2), false);
 	});
+	it('should be 2', function() {
+		let LL = new LinkedList();
+		LL.add(1);
+		LL.add(3);
+		LL.insert(2, LL.first);
+		assert.equal(LL.first.next.data, 2);
+		assert.equal(LL.first.next.next.data, 3);
+	});
 });
 describe('Double Linked List', function() {
 	it('should be created', function() {
@@ -99,6 +107,15 @@ describe('Double Linked List', function() {
 		assert.equal(DLL.first.data, 1);
 		assert.equal(DLL.first.next.data, 2);
 		assert.equal(DLL.first.next.last.data, 1);
+	});
+	it('should be inserted properly', function() {
+		let DLL = new DoubleLinkedList();
+		DLL.add(1);
+		DLL.add(3);
+		DLL.insert(2, DLL.first);
+		assert.equal(DLL.first.next.data, 2);
+		assert.equal(DLL.first.next.last.data, 1);
+		assert.equal(DLL.first.next.next.data, 3);
 	});
 });
 describe('Circular Linked List', function() {
@@ -124,5 +141,15 @@ describe('Circular Linked List', function() {
 		assert.equal(CLL.first.next.data, 2);
 		assert.equal(CLL.first.next.last.data, 1);
 		assert.equal(CLL.first.next.next, CLL.first);
+	});
+	it('should be inserted properly', function() {
+		let CLL = new CircularLinkedList();
+		CLL.add(1);
+		CLL.add(3);
+		CLL.insert(2, CLL.first);
+		assert.equal(CLL.first.next.data, 2);
+		assert.equal(CLL.first.next.last.data, 1);
+		assert.equal(CLL.first.next.next.data, 3);
+		assert.equal(CLL.first.next.next.next.data, 1);
 	});
 });
