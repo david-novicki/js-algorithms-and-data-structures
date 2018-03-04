@@ -1,0 +1,21 @@
+{
+  "name": "js-algorithms",
+  "version": "1.0.0",
+  "description": "Javascript implementations of many common CS algorithms and data structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha src/test/"
+  },
+  "keywords": [
+    "computer",
+    "science",
+    "algorithms",
+    "data",
+    "structures"
+  ],
+  "author": "David Novicki <supercycle91@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^5.0.1"
+  }
+}
