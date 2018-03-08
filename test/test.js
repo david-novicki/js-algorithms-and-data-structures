@@ -1,5 +1,5 @@
 const assert = require('assert'),
-	{ BinaryTree, LinkedList, DoubleLinkedList, CircularLinkedList } = require('../src/index.js');
+	{ BinaryTree, LinkedList, DoubleLinkedList, CircularLinkedList, DFS, BFS } = require('../src/index.js');
 
 describe('Binary Tree', function() {
 	describe('#new()', function() {
@@ -151,5 +151,47 @@ describe('Circular Linked List', function() {
 		assert.equal(CLL.first.next.last.data, 1);
 		assert.equal(CLL.first.next.next.data, 3);
 		assert.equal(CLL.first.next.next.next.data, 1);
+	});
+});
+
+describe('Depth first search', function() {
+	it('should find value', function() {
+		let Tree = new BinaryTree();
+		Tree.add(1);
+		Tree.add(2);
+		Tree.add(3);
+		Tree.add(4);
+		Tree.add(5);
+		assert.equal(DFS(Tree.root, 5), true);
+	});
+	it('should not find value', function() {
+		let Tree = new BinaryTree();
+		Tree.add(1);
+		Tree.add(2);
+		Tree.add(3);
+		Tree.add(4);
+		Tree.add(5);
+		assert.equal(DFS(Tree.root, 6), false);
+	});
+});
+
+describe('Breadth first search', function() {
+	it('should find value', function() {
+		let Tree = new BinaryTree();
+		Tree.add(2);
+		Tree.add(1);
+		Tree.add(3);
+		Tree.add(4);
+		Tree.add(5);
+		assert.equal(BFS(Tree.root, 5), true);
+	});
+	it('should not find value', function() {
+		let Tree = new BinaryTree();
+		Tree.add(2);
+		Tree.add(1);
+		Tree.add(3);
+		Tree.add(4);
+		Tree.add(5);
+		assert.equal(BFS(Tree.root, 6), false);
 	});
 });
