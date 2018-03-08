@@ -1,5 +1,5 @@
 const assert = require('assert'),
-	{ BinaryTree, LinkedList, DoubleLinkedList, CircularLinkedList, DFS, BFS } = require('../src/index.js');
+	{ BinaryTree, LinkedList, DoubleLinkedList, CircularLinkedList, DFS, BFS, Bubblesort } = require('../src/index.js');
 
 describe('Binary Tree', function() {
 	describe('#new()', function() {
@@ -193,5 +193,24 @@ describe('Breadth first search', function() {
 		Tree.add(4);
 		Tree.add(5);
 		assert.equal(BFS(Tree.root, 6), false);
+	});
+});
+
+describe('Bubblesort', function() {
+	it('should sort already sorted list', function() {
+		let arr = [ 1 ];
+		assert.equal(JSON.stringify(Bubblesort(arr)), JSON.stringify([ 1 ]));
+	});
+	it('should sort even length', function() {
+		let arr = [ 2, 1 ];
+		assert.equal(JSON.stringify(Bubblesort(arr)), JSON.stringify([ 1, 2 ]));
+	});
+	it('should sort odd length', function() {
+		let arr = [ 2, 3, 1 ];
+		assert.equal(JSON.stringify(Bubblesort(arr)), JSON.stringify([ 1, 2, 3 ]));
+	});
+	it('should sort long array', function() {
+		let arr = [ 2, 3, 1, 10, 20, 13, 12 ];
+		assert.equal(JSON.stringify(Bubblesort(arr)), JSON.stringify([ 1, 2, 3, 10, 12, 13, 20 ]));
 	});
 });
