@@ -1,5 +1,16 @@
 const assert = require('assert'),
-	{ BinaryTree, LinkedList, DoubleLinkedList, CircularLinkedList, DFS, BFS, Bubblesort } = require('../src/index.js');
+	{
+		BinaryTree,
+		LinkedList,
+		DoubleLinkedList,
+		CircularLinkedList,
+		DFS,
+		BFS,
+		Bubblesort,
+		Quicksort,
+		Mergesort,
+		Insertionsort
+	} = require('../src/index.js');
 
 describe('Binary Tree', function() {
 	describe('#new()', function() {
@@ -212,5 +223,62 @@ describe('Bubblesort', function() {
 	it('should sort long array', function() {
 		let arr = [ 2, 3, 1, 10, 20, 13, 12 ];
 		assert.equal(JSON.stringify(Bubblesort(arr)), JSON.stringify([ 1, 2, 3, 10, 12, 13, 20 ]));
+	});
+});
+
+describe('Quicksort', function() {
+	it('should sort already sorted list', function() {
+		let arr = [ 1 ];
+		assert.equal(JSON.stringify(Quicksort(arr, 0, 0)), JSON.stringify([ 1 ]));
+	});
+	it('should sort even length', function() {
+		let arr = [ 2, 1 ];
+		assert.equal(JSON.stringify(Quicksort(arr, 0, 1)), JSON.stringify([ 1, 2 ]));
+	});
+	it('should sort odd length', function() {
+		let arr = [ 2, 3, 1 ];
+		assert.equal(JSON.stringify(Quicksort(arr, 0, 2)), JSON.stringify([ 1, 2, 3 ]));
+	});
+	it('should sort long array', function() {
+		let arr = [ 2, 3, 1, 10, 20, 13, 12 ];
+		assert.equal(JSON.stringify(Quicksort(arr, 0, 6)), JSON.stringify([ 1, 2, 3, 10, 12, 13, 20 ]));
+	});
+});
+
+describe('Mergesort', function() {
+	it('should sort already sorted list', function() {
+		let arr = [ 1 ];
+		assert.equal(JSON.stringify(Mergesort(arr)), JSON.stringify([ 1 ]));
+	});
+	it('should sort even length', function() {
+		let arr = [ 2, 1 ];
+		assert.equal(JSON.stringify(Mergesort(arr)), JSON.stringify([ 1, 2 ]));
+	});
+	it('should sort odd length', function() {
+		let arr = [ 2, 3, 1 ];
+		assert.equal(JSON.stringify(Mergesort(arr)), JSON.stringify([ 1, 2, 3 ]));
+	});
+	it('should sort long array', function() {
+		let arr = [ 2, 3, 1, 10, 20, 13, 12 ];
+		assert.equal(JSON.stringify(Mergesort(arr)), JSON.stringify([ 1, 2, 3, 10, 12, 13, 20 ]));
+	});
+});
+
+describe('Insertionsort', function() {
+	it('should sort already sorted list', function() {
+		let arr = [ 1 ];
+		assert.equal(JSON.stringify(Insertionsort(arr)), JSON.stringify([ 1 ]));
+	});
+	it('should sort even length', function() {
+		let arr = [ 2, 1 ];
+		assert.equal(JSON.stringify(Insertionsort(arr)), JSON.stringify([ 1, 2 ]));
+	});
+	it('should sort odd length', function() {
+		let arr = [ 2, 3, 1 ];
+		assert.equal(JSON.stringify(Insertionsort(arr)), JSON.stringify([ 1, 2, 3 ]));
+	});
+	it('should sort long array', function() {
+		let arr = [ 2, 3, 1, 10, 20, 13, 12 ];
+		assert.equal(JSON.stringify(Insertionsort(arr)), JSON.stringify([ 1, 2, 3, 10, 12, 13, 20 ]));
 	});
 });
