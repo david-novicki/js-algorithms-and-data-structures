@@ -12,6 +12,7 @@ A collection of common Computer Science algorithms and data structures implement
 |Circular Linked List   |[./src/data-structures/circular-linked-list.js](https://github.com/supercycle91/js-algorithms-and-data-structures/blob/master/src/data-structures/circlular-linked-list.js)    |
 |Queue  |[./src/data-structures/queue.js](https://github.com/supercycle91/js-algorithms-and-data-structures/blob/master/src/data-structures/queue.js)    |
 |Stack   |[./src/data-structures/stack.js](https://github.com/supercycle91/js-algorithms-and-data-structures/blob/master/src/data-structures/stack.js)    |
+|Hash Table   |[./src/data-structures/hash-table.js](https://github.com/supercycle91/js-algorithms-and-data-structures/blob/master/src/data-structures/hash-table.js)    |
 
 |Algorithms   |Link  |
 |---|---|
