@@ -1,6 +1,7 @@
 const assert = require('assert'),
 	{
 		BinaryTree,
+		HashTable,
 		LinkedList,
 		DoubleLinkedList,
 		CircularLinkedList,
@@ -53,6 +54,57 @@ describe('Binary Tree', function() {
 	});
 });
 
+describe('Hashtable', function() {
+	describe('#new()', function() {
+		it('should be 30', function() {
+			let hashTable = new HashTable();
+			assert.equal(hashTable.size, 30);
+		});
+	});
+	describe('#new with size()', function() {
+		it('should be 10', function() {
+			let hashTable = new HashTable(10);
+			assert.equal(hashTable.size, 10);
+		});
+	});
+	describe('#add one()', function() {
+		it('should be true', function() {
+			let hashTable = new HashTable(10);
+			hashTable.add('a', 'test-a');
+			assert.equal(hashTable.contains('a', 'test-a'), true);
+		});
+	});
+	describe('#add one()', function() {
+		it('should be false', function() {
+			let hashTable = new HashTable(10);
+			hashTable.add('a', 'test-a');
+			assert.equal(hashTable.contains('b', 'test-b'), false);
+		});
+	});
+	describe('#add multiple()', function() {
+		it('should all be true', function() {
+			let hashTable = new HashTable(10);
+			hashTable.add('a', 'test-a');
+			hashTable.add('b', 'test-b');
+			hashTable.add('c', 'test-c');
+			assert.equal(hashTable.contains('a', 'test-a'), true);
+			assert.equal(hashTable.contains('b', 'test-b'), true);
+			assert.equal(hashTable.contains('c', 'test-c'), true);
+		});
+	});
+	describe('#add multiple to one key()', function() {
+		it('should all be true', function() {
+			let hashTable = new HashTable(10);
+			hashTable.add('a', 'test-a');
+			hashTable.add('a', 'test-b');
+			hashTable.add('a', 'test-c');
+			assert.equal(hashTable.contains('a', 'test-a'), true);
+			assert.equal(hashTable.contains('a', 'test-b'), true);
+			assert.equal(hashTable.contains('a', 'test-c'), true);
+		});
+	});
+});
+
 describe('Linked List', function() {
 	it('should be created', function() {
 		let LL = new LinkedList();
@@ -96,6 +148,7 @@ describe('Linked List', function() {
 		assert.equal(LL.first.next.next.data, 3);
 	});
 });
+
 describe('Double Linked List', function() {
 	it('should be created', function() {
 		let DLL = new DoubleLinkedList();
@@ -129,6 +182,7 @@ describe('Double Linked List', function() {
 		assert.equal(DLL.first.next.next.data, 3);
 	});
 });
+
 describe('Circular Linked List', function() {
 	it('should be created', function() {
 		let CLL = new CircularLinkedList();
