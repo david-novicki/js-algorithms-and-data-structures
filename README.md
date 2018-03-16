@@ -1,5 +1,7 @@
 # JS Algorithms and Data Structures
 
+[![CircleCI](https://circleci.com/gh/supercycle91/js-algorithms-and-data-structures/tree/master.svg?style=svg)](https://circleci.com/gh/supercycle91/js-algorithms-and-data-structures/tree/master)
+
 A collection of common Computer Science algorithms and data structures implements in Javascript. Pleast let me know if you see some issues or feel free to contribute by opening a PR. If it is a new addition please add tests to test file.
 
 |Data Structures   |Link  |
