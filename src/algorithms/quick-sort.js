@@ -1,11 +1,10 @@
 function quicksort(arr, left, right) {
-	let len = arr.length;
 	let pivot;
 	let partitionIndex;
 
 	if (left < right) {
 		pivot = right;
-		partitionIndex = partition(arr, pivot, left, right);
+		partitionIndex = partition(arr, right, left, right);
 
 		//sort left and right
 		quicksort(arr, left, partitionIndex - 1);
@@ -31,5 +30,4 @@ function swap(arr, i, j) {
 	arr[i] = arr[j];
 	arr[j] = temp;
 }
-
 module.exports = quicksort;
