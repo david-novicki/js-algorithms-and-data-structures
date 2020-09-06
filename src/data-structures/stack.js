@@ -2,7 +2,7 @@ class Stack extends Array {
 	constructor() {
 		super();
 	}
-	isEmpty() {
+	get isEmpty() {
 		return this.length == 0;
 	}
 	contains(data) {
