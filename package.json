@@ -16,6 +16,6 @@
   "author": "David Novicki <supercycle91@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "mocha": "^5.0.1"
+    "mocha": "^5.2.0"
   }
 }
